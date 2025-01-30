@@ -1,0 +1,15 @@
+{
+    "shopid": "Project ID",
+    "key1": "Secret key",
+    "key2": "Additional key",
+    "enablegateway": "Enable payment method",
+    "gatewayname": " Payment system <a href=\"https://lava.ru/\" target=\"_blank\">LAVA</a>",
+    "bankcard": "<b>Bank cards</b>: <b>Cards of Russia</b>",
+    "onlinepay": "<b>Electronic payments</b>: <b>SBP</b>",
+    "gatewaylink": "To register in <b>LAVA</b>, use <a href=\"https://lava.ru/\" target=\"_blank\">this link</a>",
+    "alerturl": "<b>Webhook URL:</b> ",
+    "sucurl": "<b>Successful payment URL:</b> ",
+    "warinfo1": "Cash register setup data",
+    "warinfo2": "Cash register configuration",
+    "acc_currency": "<b>Supported currencies:</b> <code>RUB</code>"
+}
