@@ -4,7 +4,7 @@
  *
  * @package Modules\Store
  * @author AMGewka
- * @version 1.8.1
+ * @version 1.8.2
  * @license MIT
  */
 class LAVA_Gateway extends GatewayBase
@@ -13,7 +13,7 @@ class LAVA_Gateway extends GatewayBase
 	{
 		$name = 'LAVA';
 		$author = '<a href="https://github.com/AMGewka" target="_blank">AMGewka</a>';
-		$gateway_version = '1.8.1';
+		$gateway_version = '1.8.2';
 		$store_version = '1.7.1';
 		$settings = ROOT_PATH . '/modules/Store/gateways/LAVA/gateway_settings/settings.php';
 
@@ -78,14 +78,21 @@ class LAVA_Gateway extends GatewayBase
 
 		$postData = file_get_contents('php://input');
 		$receivedData = json_decode($postData, true);
+		if (json_last_error() !== JSON_ERROR_NONE) {
+			die("Error: Invalid JSON data");
+		}
+		$allowedIps = array('62.122.172.72', '62.122.173.38', '91.227.144.73');
 
+		if (!in_array($_SERVER['REMOTE_ADDR'], $allowedIps)) {
+			die("Error: Untrusted IP address");
+		}
 		if ($receivedData['status'] === 'success') {
 			$payment = new Payment($paymentId, 'transaction');
 			$paymentData = [
 				'order_id' => $receivedData['order_id'],
 				'gateway_id' => $this->getId(),
 				'transaction' => $receivedData['order_id'],
-				'amount_cents' => Store::toCents($receivedData['credited']),
+				'amount_cents' => Store::toCents($receivedData['amount']),
 				'currency' => 'RUB',
 				'fee_cents' => '0'
 			];
@@ -93,5 +100,4 @@ class LAVA_Gateway extends GatewayBase
 		}
 	}
 }
-
 $gateway = new LAVA_Gateway();
