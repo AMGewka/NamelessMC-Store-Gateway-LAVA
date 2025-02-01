@@ -1,1 +1,3 @@
-Бета версия платежного шлюза LAVA.
+- Бесплатный платежный модуль LAVA для CMS NamelessMC (for Store module)
+- Free payment module LAVA for CMS NamelessMC (for Store module)
+- Безкоштовний платіжний модуль LAVA для CMS NamelessMC (for Store module)
