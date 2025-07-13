@@ -1,0 +1,46 @@
+{
+    "general": {
+        "gateway_displayname": "Касса LAVA",
+        "gateway_name": "LAVA",
+        "gateway_settings": "Настройка кассы <a href=\"https://lava.ru/\" target=\"_blank\">LAVA</a>",
+        "gateway_alert_url": "<b>URL Оповещения:</b> ",
+        "gateway_success_url": "<b>URL успешной оплаты:</b> ",
+        "default_description": "Покупка товаров: {order} на аккаунт {username}",
+        "debug_informer": "[Store] [LAVA] Режим отладки ",
+        "activated": "ВКЛЮЧЕН",
+        "deactivated": "ОТКЛЮЧЕН",
+        "saved": "Настройки успешно сохранены!",
+        "wrong_form": "Заполните все поля!",
+        "shop_uuid": "UUID кассы",
+        "shop_uuid_field": "Уникальный идентификатор вашего магазина в платёжной системе.",
+        "shop_secret1": "Секретный ключ #1",
+        "shop_secret1_field": "Используется для подписи запросов и проверки безопасности.",
+        "shop_secret2": "Секретный ключ #2",
+        "shop_secret2_field": "Второй секретный ключ для дополнительной аутентификации.",
+        "pay_desc": "Шаблон описания платежа",
+        "pay_desc_filed": "Шаблон для генерации описания платежа (виден клиенту в деталях оплаты).",
+        "pay_desc_placeholders": "<table class=\"table table-striped\"><thead><tr><th>Переменная</th><th>Описание</th></tr></thead><tbody><tr><td><code>{username}</code></td><td>Имя пользователя (никнейм) из профиля NamelessMC</td></tr><tr><td><code>{email}</code></td><td>Email-адрес пользователя</td></tr><tr><td><code>{ip}</code></td><td>IP-адрес клиента, с которого был оформлен заказ</td></tr><tr><td><code>{date}</code></td><td>Дата и время создания заказа в формате <code>YYYY-MM-DD HH:MM</code></td></tr><tr><td><code>{order_id}</code></td><td>Внутренний ID заказа в базе данных</td></tr><tr><td><code>{products}</code></td><td>Список названий всех товаров в заказе, через запятую</td></tr><tr><td><code>{amount}</code></td><td>Сумма заказа в формате <code>1234.56</code></td></tr><tr><td><code>{currency}</code></td><td>Валюта заказа (например: RUB, USD, UAH)</td></tr></tbody></table>",
+        "debug_mode": "Режим отладки",
+        "gateway_status": "Включить способ оплаты"
+    },
+    "update": {
+        "current_version": "<b>Текущая версия: </b>",
+        "latest_version": "<b>Новая версия: </b>",
+        "download": "Скачать",
+        "new_update": "Доступно новое обновление"
+    },
+    "logs": {
+        "webhook_header": "---------- ТЕЛО WEBHOOK ----------",
+        "webhook_footer": "----------------------------------"
+    },
+    "logs_pay": {
+        "new_link_created": "[Store] [LAVA] [Получение ссылки на оплату] Создана новая ссылка на оплату: "
+    },
+    "logs_pay_webhook_checker": {
+        "wrong_json_format": "[Store] [LAVA] [Проверка вебхука] Невалидный JSON! ",
+        "service_ip": "[Store] [LAVA] [Проверка IP] Сервисные IP-адреса: ",
+        "ip_address_is_not_trusted": "[Store] [LAVA] [Проверка вебхука] Доступ запрещён: Ваш IP-адрес не доверенный. IP: ",
+        "wrong_sign": "[Store] [LAVA] [Проверка вебхука] Неверная подпись!",
+        "payment_successful": "[Store] [LAVA] [Проверка вебхука] Платёж успешен! "
+    }
+}
