@@ -57,7 +57,7 @@ if (Input::exists()) {
 
         if (isset($_POST['debug']) && $_POST['debug'] == 'on') $debug = 1;
             else $debug = 0;
-            StoreConfig::set('Aaio.debug', $debug);
+            StoreConfig::set('LAVA.debug', $debug);
             ErrorHandler::logWarning($LAVA_language->get("general.debug_informer") . ($debug ? $LAVA_language->get("general.activated") : $LAVA_language->get("general.deactivated")));
 
 
