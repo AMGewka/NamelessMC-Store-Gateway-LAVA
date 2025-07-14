@@ -12,7 +12,7 @@ class LAVA_Gateway extends GatewayBase
 	public function __construct()
 	{
 		$name = 'LAVA';
-		$author = '<a href="https://github.com/AMGewka" target="_blank">AMGewka</a>';
+		$author = '<a href="https://t.me/AMGewka_Labs" target="_blank">AMGewka</a>';
 		$gateway_version = '1.8.4';
 		$store_version = '1.8.3';
 		$settings = ROOT_PATH . '/modules/Store/gateways/LAVA/gateway_settings/settings.php';
@@ -122,7 +122,7 @@ class LAVA_Gateway extends GatewayBase
                 ErrorHandler::logWarning($LAVA_language->get('logs_pay_webhook_checker.wrong_json_format') . $postData);
                 ErrorHandler::logWarning($LAVA_language->get('logs.webhook_footer'));
                 }
-			die($LAVA_language->get('logs.wrong_json_format'));
+			die($LAVA_language->get('logs_pay_webhook_checker.wrong_json_format'));
 		}
 
 		$LAVA_IP_list = array('62.122.173.38', '91.227.144.73', '31.133.222.20');
@@ -133,7 +133,7 @@ class LAVA_Gateway extends GatewayBase
             ErrorHandler::logWarning($LAVA_language->get('logs_pay_webhook_checker.ip_address_is_not_trusted') . $_SERVER['REMOTE_ADDR']);
             ErrorHandler::logWarning($LAVA_language->get('logs.webhook_footer'));
             }
-			die($LAVA_language->get('logs.ip_address_is_not_trusted'));
+			die($LAVA_language->get('logs_pay_webhook_checker.ip_address_is_not_trusted'));
 		}
 
         $expectedSignature = hash_hmac('sha256', $postData, $secret);
@@ -143,7 +143,7 @@ class LAVA_Gateway extends GatewayBase
                 ErrorHandler::logWarning($LAVA_language->get('logs_pay_webhook_checker.wrong_sign'));
                 ErrorHandler::logWarning($LAVA_language->get('logs.webhook_footer'));
                 }
-            die($LAVA_language->get('logs.wrong_sign'));
+            die($LAVA_language->get('logs_pay_webhook_checker.wrong_sign'));
         }
 
 		if ($receivedData['status'] === 'success') {
