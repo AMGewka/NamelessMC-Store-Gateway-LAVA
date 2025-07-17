@@ -1,15 +1,46 @@
 {
-    "shopid": "ID проекту",
-    "key1": "Секретний ключ",
-    "key2": "Додатковий ключ",
-    "enablegateway": "Включити спосіб оплати",
-    "gatewayname": " Платіжна система <a href=\"https://lava.ru/\" target=\"_blank\">LAVA</a>",
-    "bankcard": "<b>Банківські карти</b>: <b>Карти Росії</b>",
-    "onlinepay": "<b>Електронні платежі</b>: <b>СБП</b>",
-    "gatewaylink": "Для реєстрації в <b>LAVA</b> використовуйте <a href=\"https://lava.ru/\" target=\"_blank\">це посилання</a>",
-    "alerturl": "<b>URL Webhook:</b> ",
-    "sucurl": "<b>URL успішної оплати:</b> ",
-    "warinfo1": " Дані для налаштування каси",
-    "warinfo2": "Конфігурація каси",
-    "acc_currency": "<b>Підтримувані валюти:</b> <code>RUB</code>"
+    "general": {
+        "gateway_displayname": "Каса LAVA",
+        "gateway_name": "LAVA",
+        "gateway_settings": "Налаштування каси <a href=\"https://lava.ru/\" target=\"_blank\">LAVA</a>",
+        "gateway_alert_url": "<b>URL сповіщення:</b> ",
+        "gateway_success_url": "<b>URL успішної оплати:</b> ",
+        "default_description": "Покупка товарів: {order} для акаунта {username}",
+        "debug_informer": "[Store] [LAVA] Режим налагодження ",
+        "activated": "УВІМКНЕНО",
+        "deactivated": "ВИМКНЕНО",
+        "saved": "Налаштування успішно збережено!",
+        "wrong_form": "Заповніть усі поля!",
+        "shop_uuid": "UUID каси",
+        "shop_uuid_field": "Унікальний ідентифікатор вашого магазину в платіжній системі.",
+        "shop_secret1": "Секретний ключ №1",
+        "shop_secret1_field": "Використовується для підпису запитів і перевірки безпеки.",
+        "shop_secret2": "Секретний ключ №2",
+        "shop_secret2_field": "Другий секретний ключ для додаткової автентифікації.",
+        "pay_desc": "Шаблон опису платежу",
+        "pay_desc_filed": "Шаблон для генерації опису платежу (видно клієнту в деталях оплати).",
+        "pay_desc_placeholders": "<table class=\"table table-striped\"><thead><tr><th>Змінна</th><th>Опис</th></tr></thead><tbody><tr><td><code>{username}</code></td><td>Ім’я користувача (нікнейм) з профілю NamelessMC</td></tr><tr><td><code>{email}</code></td><td>Email‑адреса користувача</td></tr><tr><td><code>{ip}</code></td><td>IP‑адреса клієнта, з якої було оформлено замовлення</td></tr><tr><td><code>{date}</code></td><td>Дата й час створення замовлення у форматі <code>YYYY-MM-DD HH:MM</code></td></tr><tr><td><code>{order_id}</code></td><td>Внутрішній ID замовлення в базі даних</td></tr><tr><td><code>{products}</code></td><td>Список назв усіх товарів у замовленні, через кому</td></tr><tr><td><code>{amount}</code></td><td>Сума замовлення у форматі <code>1234.56</code></td></tr><tr><td><code>{currency}</code></td><td>Валюта замовлення (наприклад: RUB, USD, UAH)</td></tr></tbody></table>",
+        "debug_mode": "Режим налагодження",
+        "gateway_status": "Увімкнути спосіб оплати"
+    },
+    "update": {
+        "current_version": "<b>Поточна версія: </b>",
+        "latest_version": "<b>Нова версія: </b>",
+        "download": "Завантажити",
+        "new_update": "Доступне нове оновлення"
+    },
+    "logs": {
+        "webhook_header": "---------- ТІЛО WEBHOOK ----------",
+        "webhook_footer": "----------------------------------"
+    },
+    "logs_pay": {
+        "new_link_created": "[Store] [LAVA] [Отримання посилання на оплату] Створено нове посилання на оплату: "
+    },
+    "logs_pay_webhook_checker": {
+        "wrong_json_format": "[Store] [LAVA] [Перевірка вебхука] Невалідний JSON! ",
+        "service_ip": "[Store] [LAVA] [Перевірка IP] Сервісні IP‑адреси: ",
+        "ip_address_is_not_trusted": "[Store] [LAVA] [Перевірка вебхука] Доступ заборонено: Ваш IP‑адрес не є довіреним. IP: ",
+        "wrong_sign": "[Store] [LAVA] [Перевірка вебхука] Невірний підпис!",
+        "payment_successful": "[Store] [LAVA] [Перевірка вебхука] Платіж успішний! "
+    }
 }

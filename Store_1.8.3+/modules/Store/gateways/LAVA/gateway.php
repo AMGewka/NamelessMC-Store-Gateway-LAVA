@@ -52,7 +52,7 @@ class LAVA_Gateway extends GatewayBase
 		$data = [
 			'comment' => $desc,
 			'orderId' => $order->data()->id,
-			'shopId' => StoreConfig::get('LAVA.shopid_key'),
+			'shopId' => StoreConfig::get('LAVA.shopuuid_key'),
 			'sum' => $order->getAmount()->getTotalCents() / 100,
 			'hookUrl'    => rtrim(URL::getSelfURL(), '/') . URL::build('/store/listener', 'gateway=LAVA'),
 			'successUrl' => rtrim(URL::getSelfURL(), '/') . URL::build('/store/checkout', 'do=complete'),
