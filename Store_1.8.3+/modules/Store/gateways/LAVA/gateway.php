@@ -86,7 +86,7 @@ class LAVA_Gateway extends GatewayBase
 	public function handleReturn() : bool
 {
 		$LAVA_language = new Language(ROOT_PATH . '/modules/Store/gateways/LAVA/language', LANGUAGE);
-		$debug_mode = StoreConfig::get('LAVA.DebugMode_value') === true;
+		$debug_mode = StoreConfig::get('LAVA.debug') === true;
 
 		if (isset($decoded['url'])) {
 		if ($debug_mode) {
@@ -104,7 +104,7 @@ class LAVA_Gateway extends GatewayBase
 	public function handleListener() : void
 	{
 		$LAVA_language = new Language(ROOT_PATH . '/modules/Store/gateways/LAVA/language', LANGUAGE);
-        $debug_mode = StoreConfig::get('LAVA.DebugMode_value') === true;
+        $debug_mode = StoreConfig::get('LAVA.debug') === true;
         $secret = StoreConfig::get('LAVA.secret1_key');
 
         $receivedSignature = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
@@ -135,7 +135,7 @@ class LAVA_Gateway extends GatewayBase
             }
 			die($LAVA_language->get('logs_pay_webhook_checker.ip_address_is_not_trusted'));
 		}
-
+        /*
         $expectedSignature = hash_hmac('sha256', $postData, $secret);
         if (!hash_equals($expectedSignature, $receivedSignature)) {
             if ($debug_mode) {
@@ -144,7 +144,7 @@ class LAVA_Gateway extends GatewayBase
                 ErrorHandler::logWarning($LAVA_language->get('logs.webhook_footer'));
                 }
             die($LAVA_language->get('logs_pay_webhook_checker.wrong_sign'));
-        }
+        }*/
 
 		if ($receivedData['status'] === 'success') {
 			$payment = new Payment($paymentId, 'transaction');
